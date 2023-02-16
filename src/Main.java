@@ -1,14 +1,15 @@
 public class Main  {
+    static Employee[] emps;
     public static void printSeparator() {
         System.out.println("------------------");
     }
-    public static void printAllEmployee(Employee[] emps) {
+    public static void printAllEmployee() {
         for (int i = 0; i < emps.length - 1; i++) {
             System.out.println(emps[i]);
         }
     }
 
-    public static void sumMonthlySalary(Employee[] emps) {
+    public static void sumMonthlySalary() {
         int sum = 0;
         for (int i = 0; i < emps.length; i++) {
             sum += emps[i].getSalary();
@@ -16,7 +17,7 @@ public class Main  {
         System.out.println("Сумма затрат на зарплаты в месяц = " + sum + " руб.");
     }
 
-    public static void findEmpWithMinSalary(Employee[] emps) {
+    public static void findEmpWithMinSalary() {
         Employee employeeWithMinSalary = emps[0];
         for (int i = 0; i < emps.length; i++) {
             if (emps[i].getSalary() < employeeWithMinSalary.getSalary()) {
@@ -25,7 +26,7 @@ public class Main  {
         }
         System.out.println("Сотрудник с максимальной зарплатой: " + employeeWithMinSalary);
     }
-    public static void findEmpWithMaxSalary(Employee[] emps) {
+    public static void findEmpWithMaxSalary() {
         Employee employeeWithMaxSalary = emps[0];
         for (int i = 0; i < emps.length; i++) {
             if (emps[i].getSalary() > employeeWithMaxSalary.getSalary()) {
@@ -35,7 +36,7 @@ public class Main  {
         System.out.println("Сотрудник с максимальной зарплатой: " + employeeWithMaxSalary);
     }
 
-    public static void calculateAverageMonthlySalary(Employee[] emps) {
+    public static void calculateAverageMonthlySalary() {
         int totalCosts = 0;
         for (int i = 0; i < emps.length; i++) {
             totalCosts += emps[i].getSalary();
@@ -44,13 +45,13 @@ public class Main  {
         System.out.println("Среднее значение зарплат за месяц " + averageCost + " руб.");
     }
 
-    public static void getFullNameAllEmps (Employee[] emps) {
+    public static void getFullNameAllEmps () {
         for (int i = 0; i < emps.length; i++) {
             System.out.println(emps[i].getLastName() + ' ' + emps[i].getFirstName() + ' ' + emps[i].getMiddleName());
         }
     }
     public static void main(String[] args) {
-        Employee[] emps = new Employee[10];
+        emps = new Employee[10];
         emps[0] = new Employee("Иванов", "Иван", "Иванович", 1, 30000);
         emps[1] = new Employee("Сергеев", "Сергей", "Сергеевич", 2, 37000);
         emps[2] = new Employee("Алексеев", "Алексей", "Алексеевич", 1, 35000);
@@ -61,17 +62,17 @@ public class Main  {
         emps[7] = new Employee("Суслов", "Иван", "Георгиевич", 4, 50000);
         emps[8] = new Employee("Иванов", "Алексей", "Иванович", 5, 60000);
         emps[9] = new Employee("Сергеев", "Константин", "Русланович", 5, 65000);
-        printAllEmployee(emps);
+        printAllEmployee();
         printSeparator();
-        sumMonthlySalary(emps);
+        sumMonthlySalary();
         printSeparator();
-        findEmpWithMinSalary(emps);
+        findEmpWithMinSalary();
         printSeparator();
-        findEmpWithMaxSalary(emps);
+        findEmpWithMaxSalary();
         printSeparator();
-        calculateAverageMonthlySalary(emps);
+        calculateAverageMonthlySalary();
         printSeparator();
-        getFullNameAllEmps(emps);
+        getFullNameAllEmps();
     }
 
 }
